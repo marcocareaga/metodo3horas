@@ -264,22 +264,70 @@ img {
 .logo {
   display: flex;
   align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border: 2px solid var(--gold-main);
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.logo-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.logo-text-wrap {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-sistema {
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
-  font-size: 1.25rem;
-  letter-spacing: 2px;
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: var(--text-white);
   text-transform: uppercase;
 }
 
-.logo-img {
-  display: block;
-  height: 70px;
-  width: auto;
+.logo-3h {
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--gold-main);
+  margin-top: 2px;
 }
 
 @media (max-width: 768px) {
-  .logo-img {
-    height: 52px;
+  .logo-icon-wrap {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+  }
+
+  .logo-sistema {
+    font-size: 0.65rem;
+    letter-spacing: 3px;
+  }
+
+  .logo-3h {
+    font-size: 1.15rem;
+  }
+
+  .logo {
+    gap: 8px;
   }
 }
 
