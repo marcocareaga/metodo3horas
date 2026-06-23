@@ -262,6 +262,8 @@ img {
 }
 
 .logo {
+  display: flex;
+  align-items: center;
   font-family: 'Montserrat', sans-serif;
   font-weight: 800;
   font-size: 1.25rem;
@@ -269,8 +271,16 @@ img {
   text-transform: uppercase;
 }
 
-.logo span {
-  color: var(--gold-main);
+.logo-img {
+  display: block;
+  height: 32px;
+  width: auto;
+}
+
+@media (max-width: 768px) {
+  .logo-img {
+    height: 26px;
+  }
 }
 
 .nav-menu {
