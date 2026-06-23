@@ -248,7 +248,7 @@ img {
 }
 
 #main-header.scrolled {
-  height: 60px;
+  height: 70px;
   background: rgba(9, 10, 11, 0.95);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
   border-color: var(--border-gold-alpha);
@@ -273,13 +273,17 @@ img {
 
 .logo-img {
   display: block;
-  height: 44px;
+  height: 66px;
   width: auto;
+  background-color: var(--bg-primary);
+  border-radius: 4px;
+  padding: 4px 8px;
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 34px;
+    height: 48px;
+    padding: 3px 6px;
   }
 }
 
@@ -1529,10 +1533,10 @@ img {
   
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 70px;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 70px);
     background: var(--bg-primary);
     flex-direction: column;
     align-items: center;
