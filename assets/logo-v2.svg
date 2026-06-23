@@ -1,17 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" width="360" height="80">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 360 80" width="360" height="80">
   <defs>
     <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#e8c84a"/>
       <stop offset="50%" stop-color="#c9a227"/>
       <stop offset="100%" stop-color="#a67c1e"/>
     </linearGradient>
+    <clipPath id="iconClip">
+      <rect x="0" y="8" width="64" height="64" rx="12"/>
+    </clipPath>
   </defs>
 
-  <!-- Icon box -->
+  <!-- Icon image -->
+  <image href="icone.png" x="0" y="8" width="64" height="64" clip-path="url(#iconClip)" preserveAspectRatio="xMidYMid slice"/>
+
+  <!-- Icon border -->
   <rect x="0" y="8" width="64" height="64" rx="12" fill="none" stroke="url(#goldGrad)" stroke-width="2"/>
-  
-  <!-- 3H inside icon box -->
-  <text x="32" y="53" font-family="'Playfair Display', 'Georgia', serif" font-weight="900" font-size="32" fill="url(#goldGrad)" text-anchor="middle">3H</text>
 
   <!-- Vertical separator -->
   <line x1="80" y1="12" x2="80" y2="68" stroke="url(#goldGrad)" stroke-width="1" opacity="0.3"/>
