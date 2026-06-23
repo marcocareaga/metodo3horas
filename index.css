@@ -273,17 +273,13 @@ img {
 
 .logo-img {
   display: block;
-  height: 66px;
+  height: 70px;
   width: auto;
-  background-color: var(--bg-primary);
-  border-radius: 4px;
-  padding: 4px 8px;
 }
 
 @media (max-width: 768px) {
   .logo-img {
-    height: 48px;
-    padding: 3px 6px;
+    height: 52px;
   }
 }
 

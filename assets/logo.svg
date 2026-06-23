@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="300" height="80">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8c84a"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#a67c1e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- 3H Monogram -->
+  <text x="0" y="52" font-family="'Playfair Display', 'Georgia', serif" font-weight="900" font-size="52" fill="url(#goldGrad)" letter-spacing="1">3H</text>
+
+  <!-- Decorative line -->
+  <line x1="0" y1="60" x2="105" y2="60" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Sistema text -->
+  <text x="0" y="74" font-family="'Montserrat', 'Arial', sans-serif" font-weight="700" font-size="9" fill="#ffffff" letter-spacing="4" text-transform="uppercase">SISTEMA</text>
+</svg>
