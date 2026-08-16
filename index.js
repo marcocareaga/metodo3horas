@@ -171,4 +171,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fallback if IntersectionObserver is not supported
     animatedElements.forEach(el => el.classList.add('is-visible'));
   }
+
+  // ==========================================================================
+  // FACEBOOK PIXEL: TRACK INITIATE CHECKOUT
+  // ==========================================================================
+  const checkoutButtons = document.querySelectorAll('a[href*="lastlink.com"]');
+  checkoutButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      if (typeof fbq === 'function') {
+        fbq('track', 'InitiateCheckout');
+      }
+    });
+  });
 });
