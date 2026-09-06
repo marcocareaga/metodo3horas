@@ -479,13 +479,23 @@ img {
   border: 1px solid var(--border-white-alpha);
   border-radius: 12px;
   padding: 2.5rem;
-  transition: var(--transition-smooth);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease,
+              background 0.35s ease;
+  position: relative;
 }
 
 .glass-card:hover {
-  border-color: var(--border-gold-alpha);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(201, 162, 39, 0.05);
-  transform: translateY(-4px);
+  border-color: #ffd043;
+  transform: translateY(-6px);
+  box-shadow: 
+    0 0 15px rgba(255, 208, 67, 0.5),
+    0 0 35px rgba(218, 165, 32, 0.3),
+    0 0 65px rgba(201, 162, 39, 0.18),
+    inset 0 0 15px rgba(255, 215, 0, 0.08),
+    0 20px 45px rgba(0, 0, 0, 0.6);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04) 0%, rgba(201, 162, 39, 0.07) 100%), var(--bg-card);
 }
 
 /* Subtle background glows */
@@ -740,6 +750,10 @@ img {
   margin-bottom: 1.25rem;
 }
 
+.chapters-section-title {
+  white-space: nowrap;
+}
+
 .section-desc {
   color: var(--text-muted);
   font-size: 1rem;
@@ -786,6 +800,15 @@ img {
   border-radius: 12px;
   padding: 2.5rem;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s ease,
+              box-shadow 0.35s ease;
+}
+
+.interactive-toggle-box:hover {
+  border-color: #ffd043;
+  box-shadow: 0 0 15px rgba(255, 208, 67, 0.45), 0 0 35px rgba(218, 165, 32, 0.25), 0 20px 50px rgba(0, 0, 0, 0.5);
+  transform: translateY(-4px);
 }
 
 .toggle-switch-container {
@@ -955,8 +978,10 @@ img {
 }
 
 .gh-tab-card:hover {
-  border-color: var(--border-gold-alpha);
+  border-color: #ffd043;
   background: var(--bg-tertiary);
+  transform: translateY(-4px);
+  box-shadow: 0 0 15px rgba(255, 208, 67, 0.45), 0 0 30px rgba(218, 165, 32, 0.25);
 }
 
 .gh-tab-card.active {
@@ -1302,6 +1327,130 @@ img {
 }
 
 /* ==========================================================================
+   ENHANCED 7-DAY GUARANTEE BOX & 3D SEAL
+   ========================================================================== */
+
+.guarantee-card {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 2.5rem 3rem;
+  border-color: var(--border-gold-alpha);
+  background: linear-gradient(135deg, rgba(201, 162, 39, 0.06) 0%, rgba(13, 16, 23, 0.95) 100%), var(--bg-secondary);
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.guarantee-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 50%, rgba(245, 207, 71, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.guarantee-seal-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.guarantee-seal-wrap::before {
+  content: '';
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 207, 71, 0.4) 0%, rgba(201, 162, 39, 0.15) 50%, transparent 70%);
+  filter: blur(14px);
+  z-index: 0;
+  animation: sealAuraPulse 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes sealAuraPulse {
+  0% { transform: scale(0.92); opacity: 0.55; }
+  100% { transform: scale(1.12); opacity: 0.95; filter: blur(18px); }
+}
+
+.guarantee-seal-svg {
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 12px 25px rgba(0, 0, 0, 0.6));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.guarantee-card:hover .guarantee-seal-svg {
+  transform: scale(1.06) rotate(2deg);
+  filter: drop-shadow(0 15px 30px rgba(245, 207, 71, 0.3)) drop-shadow(0 0 15px rgba(245, 207, 71, 0.5));
+}
+
+.guarantee-content {
+  text-align: left;
+  flex: 1;
+}
+
+.guarantee-badge {
+  display: inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-main);
+  background: hsla(var(--hue-gold), 68%, 47%, 0.12);
+  border: 1px solid var(--border-gold-alpha);
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+.guarantee-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.guarantee-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.guarantee-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.g-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.g-pill svg {
+  color: var(--gold-main);
+}
+
+/* ==========================================================================
    FAQ SECTION (ACCORDIONS)
    ========================================================================== */
 
@@ -1454,6 +1603,11 @@ img {
    ========================================================================== */
 
 @media (max-width: 992px) {
+  .chapters-section-title {
+    font-size: clamp(1.35rem, 3.8vw, 2.1rem);
+    white-space: nowrap;
+  }
+
   .grid-2 {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -1774,10 +1928,35 @@ img {
     letter-spacing: -0.3px;
   }
 
+  .chapters-section-title {
+    font-size: clamp(1.02rem, 4.3vw, 1.45rem);
+    white-space: nowrap;
+    letter-spacing: -0.3px;
+  }
+
   .audience-section-title {
     white-space: nowrap;
     font-size: clamp(1.15rem, 5vw, 1.65rem);
     letter-spacing: -0.3px;
+  }
+
+  .guarantee-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    gap: 1.5rem;
+  }
+  
+  .guarantee-content {
+    text-align: center;
+  }
+  
+  .guarantee-heading {
+    font-size: 1.25rem;
+  }
+  
+  .guarantee-pills {
+    justify-content: center;
   }
 }
 
@@ -1919,6 +2098,11 @@ img {
     white-space: nowrap;
   }
 
+  .chapters-section-title {
+    font-size: clamp(0.85rem, 4.1vw, 1.12rem);
+    white-space: nowrap;
+  }
+
   .audience-section-title {
     font-size: clamp(1.05rem, 4.8vw, 1.35rem);
     white-space: nowrap;
@@ -1988,9 +2172,25 @@ img {
     letter-spacing: -0.4px;
   }
 
+  .chapters-section-title {
+    font-size: clamp(0.74rem, 4vw, 0.9rem);
+    white-space: nowrap;
+    letter-spacing: -0.4px;
+  }
+
   .audience-section-title {
     font-size: clamp(0.92rem, 4.6vw, 1.08rem);
     white-space: nowrap;
     letter-spacing: -0.4px;
+  }
+
+  .guarantee-seal-svg {
+    width: 112px;
+    height: 112px;
+  }
+
+  .guarantee-seal-wrap::before {
+    width: 115px;
+    height: 115px;
   }
 }
