@@ -932,6 +932,11 @@ img {
   margin-top: 6rem;
 }
 
+.golden-hour-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
 .gh-tabs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1741,6 +1746,39 @@ img {
   .chapter-card {
     padding: 1.25rem;
   }
+
+  /* Titulos em linha unica no mobile */
+  .golden-hour-title {
+    font-size: clamp(1rem, 4.4vw, 1.45rem);
+    white-space: nowrap;
+    letter-spacing: -0.3px;
+    margin-bottom: 1.5rem;
+  }
+
+  .chapter-consistency-title {
+    white-space: nowrap;
+    font-size: clamp(0.85rem, 3.8vw, 1.15rem);
+    letter-spacing: -0.3px;
+  }
+
+  .bonus-section-title {
+    white-space: nowrap;
+    font-size: clamp(0.95rem, 4.2vw, 1.45rem);
+    letter-spacing: -0.4px;
+  }
+
+  .bonus-title-single,
+  .bonus-info h3 {
+    white-space: nowrap;
+    font-size: clamp(0.78rem, 3.4vw, 1.05rem);
+    letter-spacing: -0.3px;
+  }
+
+  .audience-section-title {
+    white-space: nowrap;
+    font-size: clamp(1.15rem, 5vw, 1.65rem);
+    letter-spacing: -0.3px;
+  }
 }
 
 @media (max-width: 576px) {
@@ -1859,6 +1897,32 @@ img {
   .gh-pane-card {
     padding: 1.5rem;
   }
+
+  .golden-hour-title {
+    font-size: clamp(0.9rem, 4.3vw, 1.2rem);
+    white-space: nowrap;
+  }
+
+  .chapter-consistency-title {
+    font-size: clamp(0.78rem, 3.6vw, 0.95rem);
+    white-space: nowrap;
+  }
+
+  .bonus-section-title {
+    font-size: clamp(0.88rem, 4.2vw, 1.15rem);
+    white-space: nowrap;
+  }
+
+  .bonus-title-single,
+  .bonus-info h3 {
+    font-size: clamp(0.74rem, 3.3vw, 0.88rem);
+    white-space: nowrap;
+  }
+
+  .audience-section-title {
+    font-size: clamp(1.05rem, 4.8vw, 1.35rem);
+    white-space: nowrap;
+  }
 }
 
 @media (max-width: 400px) {
@@ -1893,5 +1957,40 @@ img {
 
   .price-deal {
     font-size: 2rem;
+  }
+
+  .golden-hour-title {
+    font-size: clamp(0.8rem, 4.1vw, 0.98rem);
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+  }
+
+  .chapter-consistency-title {
+    font-size: clamp(0.7rem, 3.4vw, 0.82rem);
+    white-space: nowrap;
+    letter-spacing: -0.4px;
+  }
+
+  .bonus-section-title {
+    font-size: clamp(0.78rem, 4vw, 0.92rem);
+    white-space: nowrap;
+    letter-spacing: -0.5px;
+  }
+
+  .bonus-card {
+    padding: 1rem 0.85rem;
+  }
+
+  .bonus-title-single,
+  .bonus-info h3 {
+    font-size: clamp(0.68rem, 3.2vw, 0.78rem);
+    white-space: nowrap;
+    letter-spacing: -0.4px;
+  }
+
+  .audience-section-title {
+    font-size: clamp(0.92rem, 4.6vw, 1.08rem);
+    white-space: nowrap;
+    letter-spacing: -0.4px;
   }
 }
